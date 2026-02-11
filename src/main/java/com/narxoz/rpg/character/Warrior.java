@@ -1,5 +1,8 @@
 package com.narxoz.rpg.character;
 
+import com.narxoz.rpg.equipment.Armor;
+import com.narxoz.rpg.equipment.Weapon;
+
 /**
  * Example concrete implementation of a Character.
  *
@@ -23,6 +26,9 @@ public class Warrior implements Character {
     private int mana;
     private int strength;
     private int intelligence;
+
+    private Weapon weapon;
+    private Armor armor;
 
     // TODO: Add fields for equipped weapon and armor
     // Think: Should Warrior know about its equipment?
@@ -55,6 +61,45 @@ public class Warrior implements Character {
 
     public void useSpecialAbility() {
         System.out.println(name + " uses BERSERKER RAGE! Strength temporarily increased!");
+    }
+
+    @Override
+    public int getHealth() {
+        return health;
+    }
+
+    @Override
+    public int getMana() {
+        return mana;
+    }
+
+    @Override
+    public int getStrength() {
+        return strength;
+    }
+
+    @Override
+    public int getIntelligence() {
+        return intelligence;
+    }
+
+    @Override
+    public void equipWeapon(Weapon weapon) {
+        this.weapon = weapon;
+        System.out.println(name + " equips " + weapon.getWeaponInfo() + "!");
+    }
+
+    @Override
+    public void equipArmor(Armor armor) {
+        this.armor = armor;
+        System.out.println(name + " equips " + armor.getArmorInfo() + "!");
+    }
+
+    @Override
+    public void displayEquipment() {
+        System.out.println("--- Equipped ---");
+        if(weapon != null) weapon.displayInfo();
+        if(armor != null) armor.displayInfo();
     }
 
     // TODO: Add equipment-related methods
