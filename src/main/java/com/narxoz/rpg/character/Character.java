@@ -1,5 +1,8 @@
 package com.narxoz.rpg.character;
 
+import com.narxoz.rpg.equipment.Armor;
+import com.narxoz.rpg.equipment.Weapon;
+
 /**
  * Base interface for all character types in the RPG system.
  *
@@ -22,6 +25,19 @@ public interface Character {
     // - int getIntelligence()
     // - void displayStats()
     // - void useSpecialAbility()
+
+    String getName();
+    int getHealth();
+    int getMana();
+    int getStrength();
+    int getIntelligence();
+    void displayStats();
+    void useSpecialAbility();
+
+    void equipWeapon(Weapon weapon);
+    void equipArmor(Armor armor);  
+
+    void displayEquipment();
 
     // TODO: Think about equipment
     // Should characters know about their equipped items?
