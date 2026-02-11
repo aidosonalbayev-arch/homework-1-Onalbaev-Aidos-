@@ -13,6 +13,12 @@ package com.narxoz.rpg.equipment;
  */
 public interface Armor {
 
+    int getDefense();
+    String getArmorInfo();
+    String getArmorType();
+    void displayInfo();
+    
+
     // TODO: Add armor behavior methods
     // Consider:
     // - int getDefense()
