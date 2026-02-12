@@ -51,6 +51,11 @@ public class IronSword implements Weapon {
         System.out.println("Type: " + weaponType);
     }
 
+    @Override
+    public String getWeaponType() {
+        return weaponType;
+    }
+
     // TODO: Consider adding theme-specific properties
     // For example, Medieval weapons might have:
     // - Durability
