@@ -39,6 +39,10 @@ public interface Character {
 
     void displayEquipment();
 
+    int getTotalAttack();
+int getTotalDefense();
+void attack(Character enemy);
+
     // TODO: Think about equipment
     // Should characters know about their equipped items?
     // How will you handle equipping weapons and armor?

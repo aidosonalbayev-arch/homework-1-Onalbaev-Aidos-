@@ -102,6 +102,24 @@ public class Warrior implements Character {
         if(armor != null) armor.displayInfo();
     }
 
+    @Override
+        public int getTotalAttack() {
+        return strength + (weapon != null ? weapon.getDamage() : 0);
+    }
+
+    @Override
+    public int getTotalDefense() {
+        return armor != null ? armor.getDefense() : 0;
+    }
+    
+    @Override
+    public void attack(Character enemy) {
+        int damage = this.getTotalAttack() - enemy.getTotalDefense();
+        if (damage < 0) damage = 0;
+    
+        System.out.println(name + " attacks " + enemy.getName() + " for " + damage + " damage!");
+    }
+
     // TODO: Add equipment-related methods
     // Examples:
     // - void equipWeapon(Weapon weapon)
